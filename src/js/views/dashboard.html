@@ -1,0 +1,22 @@
+<!--
+ Copyright (c) 2014, 2026, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Dashboard Content Area</h1>
+  <div>
+    <p>Welcome to the First APP</p>
+  </div>
+  <div>
+    <oj-input-date
+      label-hint="Enter Your Date of Birth"
+      value="{{birthDate}}"
+      converter="[[dateConverter]]"
+      help.instruction="Format: MM/DD/YYYY"></oj-input-date>
+      <oj-c-input-text label-hint="Enter Your Name" value="{{name}}"
+      required
+      validators="[[lengthValidator]]"
+      help.instruction="Only alphabeds , 3-10 characters"></oj-c-input-text>
+  </div>
+</div>

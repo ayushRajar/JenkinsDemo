@@ -1,0 +1,113 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+.send-off-screen {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.demo-oracle-icon {
+  width:137px;
+  height:18px;
+  content:url("images/oracle_logo.svg")
+}
+
+html:not([dir="rtl"]) .demo-oracle-icon {
+  padding-right:4px
+}
+
+html[dir="rtl"] .demo-oracle-icon {
+  padding-left:4px
+}
+
+.demo-oracle-icon:before {
+  display:inline
+}
+
+.demo-appheader-avatar {
+  width:24px;
+  height:24px
+}
+
+.demo-appheader-avatar:before {
+  content:url("images/avatar_24px.png")
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .demo-appheader-avatar:before {
+      content:url("images/avatar_24px_2x.png");
+      -webkit-transform:translate(-25%, -25%) scale(0.5);
+      transform:translate(-25%, -25%) scale(0.5)
+  }
+}
+
+.tenure-container {
+    width: 100%;
+    max-width: 650px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.tenure-label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#loanTenure {
+    width: 100%;
+}
+
+.slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.tick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #555;
+}
+
+.tick-line {
+    width: 1px;
+    height: 8px;
+    background-color: #555;
+    display: block;
+    margin-bottom: 4px;
+}
+
+#parentContainer1 {
+  min-height: 600px;
+}
+
+#parentContainer2 {
+  min-height: 550px;
+}
+
+#itemDetailsContainer {
+  min-height: 500px;
+}
+
+#chartContainer {
+  width: 100%;
+  height: 400px;
+}
+
+.chartStyle {
+  width: 100%;
+  height: 400px;
+}

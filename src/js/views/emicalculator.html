@@ -1,0 +1,91 @@
+<div class="oj-hybrid-padding">
+
+    <h1>EMI Calculator</h1>
+
+    <oj-form-layout max-columns="1" direction="row">
+
+        <oj-input-text
+            id="loanAmount"
+            label-hint="Enter the Principal Amount"
+            value="{{loanAmount}}">
+        </oj-input-text>
+
+        <oj-input-text
+            id="interestRate"
+            label-hint="Enter the Interest Rate"
+            value="{{interestRate}}">
+        </oj-input-text>
+
+        <div class="tenure-container">
+
+            <label class="tenure-label">
+                Loan Tenure (Months)
+            </label>
+
+            <oj-slider
+                id="loanTenure"
+                min="0"
+                max="360"
+                step="12"
+                value="{{loanTenure}}">
+            </oj-slider>
+
+            <div class="slider-ticks">
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>0</span>
+                </div>
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>60</span>
+                </div>
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>120</span>
+                </div>
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>180</span>
+                </div>
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>240</span>
+                </div>
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>300</span>
+                </div>
+
+                <div class="tick">
+                    <span class="tick-line"></span>
+                    <span>360</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <oj-button
+            id="calculateButton"
+            on-oj-action="[[calculateEmi]]">
+
+            Calculate EMI
+
+        </oj-button>
+
+        <oj-input-text
+            id="emiResult"
+            label-hint="EMI Result"
+            value="[[emiResult]]"
+            readonly>
+        </oj-input-text>
+
+    </oj-form-layout>
+
+</div>

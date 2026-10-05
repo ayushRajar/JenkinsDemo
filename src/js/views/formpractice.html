@@ -1,0 +1,39 @@
+<oj-agreementform-layout max-columns="3" direction="row">
+    <oj-input-text id="Name" label-hint="Enter the Name" value="{{Name}}"></oj-input-text>
+    <oj-input-text id="emailInput" label-hint="Email" value="{{email}}"></oj-input-text>
+
+    <oj-select-single
+              id="countrySelect"
+              label-hint="Select Country"
+              label-edge="inside"
+              class="oj-form-control-max-width-md"
+              data="[[countryListDataProvider]]"
+              value="{{selectCountry}}"></oj-select-single>
+
+    <oj-radioset id="gender" value="{{gender}}" label-hint="Gender">
+                <oj-option value="male">Male</oj-option>
+                <oj-option value="female">Female</oj-option>
+                <oj-option value="others">Others</oj-option>
+              </oj-radioset>
+
+    <oj-checkboxset
+              id="hobbiesChecknox"
+              label-hint="Hobbies"
+              label-edge="inside"
+              value="{{hobbies}}">
+              <oj-option value="reading">Reading</oj-option>
+              <oj-option value="sports">Sports</oj-option>
+              <oj-option value="games">Games</oj-option>
+            </oj-checkboxset>
+    <div>
+        <oj-button on-oj-action="[[handleSubmit]]">Submit
+
+        </oj-button>
+    </div>
+
+    <div data-bind="if: formSubmitted">
+  <h3>Submitted Data</h3>
+  <pre data-bind="text: ko.toJSON(submittedData, null, 2)"></pre>
+</div>
+
+</oj-form-layout>

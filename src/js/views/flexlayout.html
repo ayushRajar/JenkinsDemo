@@ -1,0 +1,111 @@
+<div class="oj-hybrid-padding">
+
+  <h1>Product Information</h1>
+
+  <!-- Parent Container 1 -->
+  <div
+    id="parentContainer1"
+    class="oj-flex oj-flex-init oj-panel oj-bg-warning-20">
+
+    <!-- Activities -->
+    <div
+      id="activitiesContainer"
+      class="oj-flex-item oj-bg-info-30 oj-sm-only-text-align-end oj-md-4 oj-sm-6">
+
+      <h3 id="activitiesHeader">Activities</h3>
+
+      <oj-list-view
+        id="activitiesList"
+        aria-labelledby="activitiesHeader"
+        data="[[activityDataProvider]]"
+        gridlines.item="visible">
+
+        <template slot="itemTemplate">
+
+          <div>
+            <strong>
+              <oj-bind-text
+                value="[[$current.data.name]]">
+              </oj-bind-text>
+            </strong>
+          </div>
+
+        </template>
+
+      </oj-list-view>
+
+    </div>
+
+
+    <!-- Parent Container 2 -->
+    <div
+      id="parentContainer2"
+      class="oj-flex oj-flex-item oj-panel oj-bg-danger-30 oj-lg-padding-6x oj-md-8 oj-sm-12">
+
+      <!-- Activity Items -->
+      <div
+        id="activityItemsContainer"
+        class="oj-flex-item oj-md-6 oj-sm-12">
+      </div>
+
+
+      <!-- Item Details -->
+      <div
+        id="itemDetailsContainer"
+        class="oj-flex-item oj-panel oj-bg-neutral-30 oj-md-6 oj-sm-12">
+
+        <h3 id="itemDetailsHeader">
+          Item Details
+        </h3>
+
+
+        <!-- Chart Selector -->
+        <div class="oj-sm-margin-2x">
+
+          <oj-label for="basicSelect">
+            Select Chart:
+          </oj-label>
+
+          <oj-select-single
+            id="basicSelect"
+            class="selectSingleStyle"
+            data="[[chartTypesDP]]"
+            value="{{val}}">
+          </oj-select-single>
+
+        </div>
+
+
+        <!-- Chart -->
+        <div id="chartContainer" class="chartContainer">
+
+          <oj-chart
+        id="barChart"
+        type="[[val]]"
+        data="[[chartDataProvider]]"
+        animation-on-display="auto"
+        animation-on-data-change="auto"
+        hover-behavior="dim"
+        class="chartStyle">
+
+        <template slot="itemTemplate" data-oj-as="item">
+
+            <oj-chart-item
+            value="[[item.data.value]]"
+            group-id="[[[item.data.group]]]"
+            series-id="[[item.data.series]]">
+            </oj-chart-item>
+
+        </template>
+
+        </oj-chart>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
